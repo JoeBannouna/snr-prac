@@ -1,0 +1,32 @@
+# Install:    conda env create -f environment.yml
+# Activate:   conda activate pracs
+# Deactivate: conda deactivate
+
+name: pracs
+
+channels:
+  - conda-forge
+
+dependencies:
+  - gammapy=1.2
+  - python=3.11
+  - pip
+  - astropy
+  - click
+  - cython
+  - numpy>1.20
+  - pydantic>=2.5
+  - pyyaml
+  - regions>=0.5
+  - matplotlib>=3.4
+  - scipy!=1.10
+  - iminuit>=2.8.0
+  - extension-helpers
+  - tqdm
+  - ipython
+  - jupyter
+  - jupyterlab
+  - naima
+  - pandas
+  - reproject
+  - healpy
