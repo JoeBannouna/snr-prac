@@ -1,7 +1,7 @@
 import pandas as pd
 import numpy as np
 
-from scipy.ndimage.filters import gaussian_filter
+from scipy.ndimage import gaussian_filter
 
 import matplotlib.pyplot as plt
 from matplotlib.colors import LogNorm 
@@ -20,20 +20,20 @@ from urllib.request import urlretrieve
 # modeling space is around 100-200 parsecs. E is constant in 
 # this function, resulting in D being constant.
 
-R = np.linspace(-100, 100, 1000);
-t = linspace(0, 100, 100);
+R1 = np.linspace(-100, 100, 1000);
+t1 = np.linspace(0, 100, 100);
+E1 = np.linspace(10000, 100000000, 100)
 
 # R -> The distance from the centre
 # t -> The time
 # D -> Diffusion coefficient
 # E is the energy, no energy is lost in this system
 
-def constantEDistribution(R, t, D):
+def constantEDistribution(E, R, t, D):
     delta = 0.45;
     Tpp = 6*(10**7)
     Rdif = 2 * np.sqrt(D * t)
 
-    E = np.random.normal(10, 2, 10)
     N = 1
     alpha = 2.7
 
@@ -42,4 +42,8 @@ def constantEDistribution(R, t, D):
     return dist
 
     
-print(constantEDistribution(1, 1, 1))
+print(constantEDistribution(1, 0, 1, 1))
+
+plt.plot(R1, constantEDistribution(100000, R1, 10, 1))
+
+
